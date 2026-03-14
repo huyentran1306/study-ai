@@ -24,7 +24,7 @@ public class ReportGenerator
             modules = moduleCounts,
             sampleErrors = entries.Take(200).Select(e => new
             {
-                timestamp = e.Timestamp == DateTime.MinValue ? null : e.Timestamp,
+                timestamp = e.Timestamp == DateTime.MinValue ? (DateTime?)null : e.Timestamp,
                 module = e.Module,
                 file = e.FileName,
                 message = e.Message
